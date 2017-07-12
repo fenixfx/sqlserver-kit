@@ -80,7 +80,7 @@ Most valuable professionals in Microsoft SQL Server Database world
 | Markus Winand       | [Markus Winand Blog]         | AUT     | Vienna           | [@MarkusWinand]    | NULL                              | 0   | -                |
 | Kevin Feasel        | [Kevin Feasel Blog]          | USA     | Durham           | [@feaselkl]        | NULL                              | 2   | [Feasel MVP]     |
 
-[Stephen Wynkoop Site]:https://www.sswug.org//
+[Stephen Wynkoop Site]:https://www.sswug.org/
 [Cody Konior Blog]:https://www.codykonior.com/categories/#sql
 [Drew Furgiuele Blog]:http://port1433.com/
 [Doug Lane Blog]:http://www.douglane.net/blog/
