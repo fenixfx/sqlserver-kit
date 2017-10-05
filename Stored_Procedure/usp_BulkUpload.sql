@@ -17,6 +17,7 @@ ALTER PROCEDURE dbo.usp_BulkUpload (
               , @FIRSTROW             INTEGER       = 1
               , @KEEPNULLS            BIT           = 0
               , @LASTROW              INTEGER       = 0
+              , @ROWS_PER_BATCH       INTEGER       = 0
               , @ROWTERMINATOR        NVARCHAR(10)  = N'\n'
               , @TABLOCK              BIT           = 1
               , @ERRORFILE            NVARCHAR(300) = N''
@@ -183,6 +184,7 @@ WITH (
       __FORMATFILE__
       ___KEEPNULLS___
       __LASTROW__
+      __ROWS_PER_BATCH__
       __TABLOCK__
       ,ERRORFILE = ''__ERRORFILE__''
 );
@@ -212,6 +214,7 @@ WITH (
       __FORMATFILE__
       ___KEEPNULLS___
       __LASTROW__
+      __ROWS_PER_BATCH__
       __TABLOCK__
       ,ERRORFILE = ''__ERRORFILE__''
 );
@@ -231,6 +234,7 @@ WITH (
         SET @tsqlCommand = REPLACE(@tsqlCommand, '__FIRSTROW__',        @FIRSTROW);
         SET @tsqlCommand = REPLACE(@tsqlCommand, '___KEEPNULLS___',     CASE WHEN @KEEPNULLS = 1 THEN ',KEEPNULLS' ELSE '' END);
         SET @tsqlCommand = REPLACE(@tsqlCommand, '__LASTROW__',         CASE WHEN @LASTROW > 0   THEN ',LASTROW = ' + CAST(@LASTROW AS NVARCHAR) ELSE '' END);
+        SET @tsqlCommand = REPLACE(@tsqlCommand, '__ROWS_PER_BATCH__',  CASE WHEN @ROWS_PER_BATCH > 0 THEN ',ROWS_PER_BATCH = ' + CAST(@ROWS_PER_BATCH AS NVARCHAR) ELSE '' END);
         SET @tsqlCommand = REPLACE(@tsqlCommand, '__TABLOCK__',         CASE WHEN @TABLOCK = 1   THEN ',TABLOCK' ELSE '' END);
         SET @tsqlCommand = REPLACE(@tsqlCommand, '__ERRORFILE__',       @ERRORFILE);
         SET @tsqlCommand = REPLACE(@tsqlCommand, '__useIdentityON__',   CASE WHEN @useIdentity = 1 THEN 'SET IDENTITY_INSERT ' + @tableFullName + ' ON;' ELSE '' END);
