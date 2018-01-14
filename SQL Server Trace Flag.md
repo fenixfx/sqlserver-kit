@@ -452,6 +452,14 @@ Function: Output Index Selection info<br />
 Link: http://www.databasejournal.com/features/mssql/article.php/1443351/SQL-Server-65-Some-Useful-Trace-Flags.htm
 
 
+<a id="304"></a>
+#### Trace Flag: 304
+**Undocumented trace flag**<br />
+Function: Changed the reported CachedPlanSize.<br />
+Link: [New Undocumented Trace Flags]<br />
+Scope: ?
+
+
 <a id="310"></a>
 #### Trace Flag: 310
 **Undocumented trace flag**<br />
@@ -772,6 +780,22 @@ Link: https://support.microsoft.com/en-us/help/2708594/fix-locked-page-allocatio
 #### Trace Flag: 851
 Function: According to Bob Ward’s PASS 2014 talk on SQL Server IO, “disable[s] BPE even if enabled via ALTER SERVER”<br />
 Link: None
+
+
+<a id="861"></a>
+#### Trace Flag: 861
+**Undocumented trace flag**<br />
+Function: According to the error log this disables buffer pool extension.<br />
+Link: [New Undocumented Trace Flags]<br />
+Scope: ?
+
+
+<a id="862"></a>
+#### Trace Flag: 862
+**Undocumented trace flag**<br />
+Function: According to the error log this enables buffer pool extension. This TF probably doesn’t do anything anymore.<br />
+Link: [New Undocumented Trace Flags]<br />
+Scope: ?
 
 
 <a id="888"></a>
@@ -1332,6 +1356,14 @@ Link: http://www.queryprocessor.com/ce-process<br />
 Link: https://sqlperformance.com/2014/01/sql-plan/cardinality-estimation-for-multiple-predicates
 
 
+<a id="2368"></a>
+#### Trace Flag: 2368
+**Undocumented trace flag**<br />
+Function: For one query, this resulted in a parallel plan significantly more expensive than the naturally occurring serial plan. Could be related to trace flag 3651.<br />
+Link: [New Undocumented Trace Flags]<br />
+Scope: ?
+
+
 <a id="2371"></a>
 #### Trace Flag: 2371
 Function: Changes the fixed auto update statistics threshold to dynamic auto update statistics threshold.<br />
@@ -1357,10 +1389,26 @@ Link: [More Undocumented Query Optimizer Trace Flags]<br />
 Link: [Cardinality Estimation Framework 2014 First Look]
 
 
+<a id="2374"></a>
+#### Trace Flag: 2374
+**Undocumented trace flag**<br />
+Function: Removes QueryHash and QueryPlanHash information from estimated query plans.<br />
+Link: [New Undocumented Trace Flags]<br />
+Scope: ?
+
+
 <a id="2382"></a>
 #### Trace Flag: 2382
 Function: SSC: “SQL 8 -Statistics collected for system tables.”<br />
 Link: None
+
+
+<a id="2387"></a>
+#### Trace Flag: 2387
+**Undocumented trace flag**<br />
+Function: There was a small change in CPU and IO costs for some operators. Full effect unknown.<br />
+Link: [New Undocumented Trace Flags]<br />
+Scope: ?
 
 
 <a id="2388"></a>
@@ -1416,6 +1464,22 @@ Scope: global only
 #### Trace Flag: 2398
 Function: Another one I stumbled upon myself...outputs info about “Smart Seek costing”: e.g.: “Smart seek costing (75.2) :: 1.34078e+154 , 1”<br />
 Link: None
+
+
+<a id="2399"></a>
+#### Trace Flag: 2399
+**Undocumented trace flag**<br />
+Function: Small changes in operator costs were observed for some queries. These were typically less than 0.01 units.<br />
+Link: [New Undocumented Trace Flags]<br />
+Scope: ?
+
+
+<a id="2418"></a>
+#### Trace Flag: 2418
+**Undocumented trace flag**<br />
+Function: Disables serial Batch mode processing.<br />
+Link: [New Undocumented Trace Flags]<br />
+Scope: ?
 
 
 <a id="2422"></a>
@@ -2171,6 +2235,14 @@ Function: Eliminates sending DONE_IN_PROC messages to client for each statement 
 Link: https://blogs.msdn.microsoft.com/selvar/2010/07/13/delete-operation-from-a-reporting-service-2005-report-manager-fails-with-internalcatalogexception-and-throws-watson-mini-dump
 
 
+<a id="3651"></a>
+#### Trace Flag: 3651
+**Undocumented trace flag**<br />
+Function: Can cause stack dumps. For one query, this resulted in a parallel plan significantly more expensive than the naturally occurring serial plan.<br />
+Link: [New Undocumented Trace Flags]<br />
+Scope: ?
+
+
 <a id="3654"></a>
 #### Trace Flag: 3654
 Function: Apparently increases info found in the sys.dm_os_memory_allocations DMV (which appears to have replaced the DBCC MEMOBJLIST command) Bob Ward also discusses it in his PASS 2013 session, saying that it turns on tracing for all memory allocations done by “Memory Objects” (a specific SQLOS memory term). This flag will have a significant impact on system performance.<br />
@@ -2817,6 +2889,14 @@ Link: http://sqlblog.com/blogs/paul_white/archive/2013/08/31/sql-server-internal
 Link: http://www.queryprocessor.com/batch-sort-and-nested-loops
 
 
+<a id="7356"></a>
+#### Trace Flag: 7356
+**Undocumented trace flag**<br />
+Function: Added a probe residual to an adaptive join. Full effect unknown.<br />
+Link: [New Undocumented Trace Flags]<br />
+Scope: ?
+
+
 <a id="7357"></a>
 #### Trace Flag: 7357
 Function: Outputs info re: hashing operators, including role reversal, recursion levels, whether the Unique Hash optimization could be used, info about the hash-related bitmap, etc. Dima’s article is a must-read. For parallel query plans, 7357 does NOT send output to the console window. However, output to the SQL Server error log can be enabled by enabling 3605.<br />
@@ -2828,6 +2908,14 @@ Link: http://sqlblog.com/blogs/paul_white/archive/2012/05/01/query-optimizer-dee
 #### Trace Flag: 7359
 Function: Disables the bitmap associated with hash matching. This bitmap is used for “bit-vector filtering” and can reduce the amount of data written to TempDB during hash spills.<br />
 Link: www.queryprocessor.com/hash-join-execution-internals
+
+
+<a id="7398"></a>
+#### Trace Flag: 7398
+**Undocumented trace flag**<br />
+Function: Changed a nested loop join to have ordered prefetch.<br />
+Link: [New Undocumented Trace Flags]<br />
+Scope: ?
 
 
 <a id="7470"></a>
@@ -3383,6 +3471,14 @@ Link: http://sqlblog.com/blogs/adam_machanic/archive/2013/07/11/next-level-paral
 Link: [What You Need to Know about the Batch Mode Window Aggregate Operator in SQL Server 2016: Part 1]
 
 
+<a id="8665"></a>
+#### Trace Flag: 8665
+**Undocumented trace flag**<br />
+Function: Disables local/global aggregation.<br />
+Link: [New Undocumented Trace Flags]<br />
+Scope: ?
+
+
 <a id="8666"></a>
 #### Trace Flag: 8666
 **Undocumented trace flag**<br />
@@ -3416,6 +3512,14 @@ Function: Skips “Search 1” phase of query optimization, and only Search 0 an
 Link: https://sqlbits.com/Sessions/Event12/Query_Optimizer_Internals_Traceflag_fun
 
 
+<a id="8678"></a>
+#### Trace Flag: 8678
+**Undocumented trace flag**<br />
+Function: For one query this changed a bushy plan to a left deep one. There was no change in cost. Full effect unknown.<br />
+Link: [New Undocumented Trace Flags]<br />
+Scope: ?
+
+
 <a id="8679"></a>
 #### Trace Flag: 8679
 Function: Prevents the SQL Server optimizer from using a Hash Match Team operator<br />
@@ -3426,6 +3530,14 @@ Link: None
 #### Trace Flag: 8687
 Function: Prevents the SQL Server optimizer from using a Hash Match Team operator<br />
 Link: None
+
+
+<a id="8688"></a>
+#### Trace Flag: 8688
+**Undocumented trace flag**<br />
+Function: Disables parallel scans.<br />
+Link: [New Undocumented Trace Flags]<br />
+Scope: ?
 
 
 <a id="8690"></a>
@@ -3486,6 +3598,22 @@ Function: Dima: “Group Optimization Info”<br />
 Link: http://www.queryprocessor.ru/good-enough-plan
 
 
+<a id="8741"></a>
+#### Trace Flag: 8741
+**Undocumented trace flag**<br />
+Function: Resulted in a different join order for some queries with a higher estimated cost. Perhaps this disables Transitive Predicates? Full effect unknown.<br />
+Link: [New Undocumented Trace Flags]<br />
+Scope: ?
+
+
+<a id="8742"></a>
+#### Trace Flag: 8742
+**Undocumented trace flag**<br />
+Function: Resulted in a different join order for some queries. Full effect unknown.<br />
+Link: [New Undocumented Trace Flags]<br />
+Scope: ?
+
+
 <a id="8744"></a>
 #### Trace Flag: 8744
 Function: Disable pre-fetching for the Nested Loop operator<br />
@@ -3500,6 +3628,14 @@ Scope: global only
 #### Trace Flag: 8746
 Function: Whatever else it does, one effect is to disable the “rowset sharing” optimization described in the 2 PWhite posts.<br />
 Link: https://sqlperformance.com/2016/03/sql-plan/changes-to-a-writable-partition-may-fail
+
+
+<a id="8750"></a>
+#### Trace Flag: 8750
+**Undocumented trace flag**<br />
+Function: Skips search 0 optimization phase and moves to search 1.<br />
+Link: [New Undocumented Trace Flags]<br />
+Scope: ?
 
 
 <a id="8755"></a>
@@ -3555,6 +3691,14 @@ Link: https://sqlperformance.com/2014/06/sql-plan/filtered-index-side-effect
 Function: PWhite: “Disable DML Request Sort (CUpdUtil::FDemandRowsSortedForPerformance)”<br />
 Link: http://sqlblog.com/blogs/paul_white/archive/2013/01/26/optimizing-t-sql-queries-that-change-data.aspx<br />
 Link: https://sqlperformance.com/2014/10/t-sql-queries/performance-tuning-whole-plan
+
+
+<a id="8799"></a>
+#### Trace Flag: 8799
+**Undocumented trace flag**<br />
+Function: Forces unordered scans.<br />
+Link: [New Undocumented Trace Flags]<br />
+Scope: ?
 
 
 <a id="8809"></a>
@@ -3677,6 +3821,14 @@ Function: Used to workaround a problem with query notifications and restoring a 
 Link: https://support.microsoft.com/en-us/help/2483090/restore-or-recovery-may-fail-or-take-a-long-time-if-query-notification-is-used-in-a-database
 
 
+<a id="9114"></a>
+#### Trace Flag: 9114
+**Undocumented trace flag**<br />
+Function: Implemented a (SELECT 1) = 1 predicate as a join instead of optimizing it away.<br />
+Link: [New Undocumented Trace Flags]<br />
+Scope: ?
+
+
 <a id="9115"></a>
 #### Trace Flag: 9115
 Function: PWhite: “Disable prefetch (CUpdUtil::FPrefetchAllowedForDML)” Dima: “Disables both [NLoop Implicit Batch Sort {TF 2340} and NL Prefetching {TF 8744}], and not only on the Post Optimization, but the explicit Sort also”<br />
@@ -3706,6 +3858,38 @@ Link: https://support.microsoft.com/en-us/help/815008/fix-query-with-transaction
 #### Trace Flag: 9136
 Function: “PRB: You receive error message 8623 when you try to run a query that joins multiple tables”<br />
 Link: None
+
+
+<a id="9164"></a>
+#### Trace Flag: 9164
+**Undocumented trace flag**<br />
+Function: Disables hash joins.<br />
+Link: [New Undocumented Trace Flags]<br />
+Scope: ?
+
+
+<a id="9165"></a>
+#### Trace Flag: 9165
+**Undocumented trace flag**<br />
+Function: Removed an index recommendation from a plan.<br />
+Link: [New Undocumented Trace Flags]<br />
+Scope: ?
+
+
+<a id="9182"></a>
+#### Trace Flag: 9182
+**Undocumented trace flag**<br />
+Function: Resulted in a very strange cost change to a clustered index delete.<br />
+Link: [New Undocumented Trace Flags]<br />
+Scope: ?
+
+
+<a id="9183"></a>
+#### Trace Flag: 9183
+**Undocumented trace flag**<br />
+Function: Resulted in a very strange cost change to a clustered index delete.<br />
+Link: [New Undocumented Trace Flags]<br />
+Scope: ?
 
 
 <a id="9185"></a>
@@ -3748,11 +3932,35 @@ Function: “FIX: A query filter condition that has a LEFT OUTER JOIN clause may
 Link: None
 
 
+<a id="9236"></a>
+#### Trace Flag: 9236
+**Undocumented trace flag**<br />
+Function: Resulted in a different join order for some queries. Full effect unknown.<br />
+Link: [New Undocumented Trace Flags]<br />
+Scope: ?
+
+
+<a id="9251"></a>
+#### Trace Flag: 9251
+**Undocumented trace flag**<br />
+Function: Change in cardinality estimates for some queries. It might only work with the legacy CE. Full effect unknown.<br />
+Link: [New Undocumented Trace Flags]<br />
+Scope: ?
+
+
 <a id="9259"></a>
 #### Trace Flag: 9259
 Function: Disables Project Normalization step<br />
 **Note: Please, don’t use TF 9259 that disables Project Normalization step in a real production system, besides it is undocumented and unsupported, it may hurt your performance.**<br />
 Link: http://www.queryprocessor.com/sudf-ce/
+
+
+<a id="9260"></a>
+#### Trace Flag: 9260
+**Undocumented trace flag**<br />
+Function: Adds an explicit sort before creation of an index spool. Almost doesn’t change the total estimated cost. Might be identical plans with just more detail shown at that step.<br />
+Link: [New Undocumented Trace Flags]<br />
+Scope: ?
 
 
 <a id="9268"></a>
@@ -3767,11 +3975,20 @@ Function: “FIX: A DML Operation on a Large Table Can Cause Performance Problem
 Link: None
 
 
-<a id="9292"></a>
-#### Trace Flag: 9292
-Function: Output Statistics considered to be used by Query Optimizer<br />
-Link: [How to Find the Statistics Used to Compile an Execution Plan]<br />
-Related to: [9204](#9204)
+<a id="9284"></a>
+#### Trace Flag: 9284
+**Undocumented trace flag**<br />
+Function: Changed the order of a scalar operator comparison in a single join for certain queries. Full effect unknown.<br />
+Link: [New Undocumented Trace Flags]<br />
+Scope: ?
+
+
+<a id="9287"></a>
+#### Trace Flag: 9287
+**Undocumented trace flag**<br />
+Function: Appears to disable partial aggreation.<br />
+Link: [New Undocumented Trace Flags]<br />
+Scope: ?
 
 
 <a id="9288"></a>
@@ -3780,6 +3997,13 @@ Related to: [9204](#9204)
 Function: Effects around local and global aggregates - choose coerce partial and global aggregation over scalar aggregation.<br />
 Link: https://github.com/ktaranov/sqlserver-kit/issues/93<br />
 Scope: local only
+
+
+<a id="9292"></a>
+#### Trace Flag: 9292
+Function: Output Statistics considered to be used by Query Optimizer<br />
+Link: [How to Find the Statistics Used to Compile an Execution Plan]<br />
+Related to: [9204](#9204)
 
 
 <a id="9347"></a>
